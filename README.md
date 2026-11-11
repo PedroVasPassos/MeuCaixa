@@ -1,5 +1,9 @@
 # Meu Caixa — versão mais simples
 
+🚧 Projeto em desenvolvimento (MVP)
+
+Aplicação de controle financeiro pessoal desenvolvida com React e Vite. Atualmente possui gerenciamento de receitas, despesas e investimentos, com armazenamento local.
+Próximas etapas: integração com Supabase, autenticação, sincronização dos dados e melhorias na experiência do usuário.
 Projeto React + Vite com dois temas: **grafite azulado** (escuro) e **marfim** (claro).
 
 ## Comece aqui
