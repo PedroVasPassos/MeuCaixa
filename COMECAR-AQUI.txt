@@ -5,13 +5,6 @@ MEU CAIXA — VERSÃO SIMPLIFICADA
 3. Depois: npm run dev
 4. Abra o endereço mostrado pelo terminal.
 
-O QUE MUDOU
-- Menu em um lugar só (no topo)
-- Tema em um botão só (no topo direito)
-- Valores sem números esticados
-- Layout mais limpo
-- Botões simples para seu CDB
-
 COMO COMEÇAR DE VERDADE
 - Clique em "Começar com meus dados" para remover os valores fictícios.
 - Vá em Ajustes e informe o dinheiro da conta sem o CDB.
