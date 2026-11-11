@@ -1,64 +1,92 @@
-# Meu Caixa — versão mais simples
+# Meu Caixa
 
-🚧 Projeto em desenvolvimento (MVP)
+🚧 **Em desenvolvimento**
 
-Aplicação de controle financeiro pessoal desenvolvida com React e Vite. Atualmente possui gerenciamento de receitas, despesas e investimentos, com armazenamento local.
-Próximas etapas: integração com Supabase, autenticação, sincronização dos dados e melhorias na experiência do usuário.
-Projeto React + Vite com dois temas: **grafite azulado** (escuro) e **marfim** (claro).
+O Meu Caixa é uma aplicação web de controle financeiro pessoal desenvolvida com React e Vite.
 
-## Comece aqui
+O projeto tem como objetivo facilitar a organização das finanças do dia a dia, permitindo registrar receitas e despesas, acompanhar o saldo disponível e controlar o dinheiro guardado em investimentos.
+
+A interface possui modos claro e escuro e foi pensada para apresentar as informações financeiras de forma simples e fácil de entender.
+
+## Funcionalidades
+
+- Cadastro, edição e exclusão de receitas e despesas
+- Organização dos gastos por categorias
+- Acompanhamento do saldo disponível
+- Resumo de receitas e despesas mensais
+- Gráficos e relatórios de gastos
+- Cadastro e acompanhamento de investimentos
+- Registro de depósitos e retiradas de dinheiro investido
+- Planejamento financeiro e metas pessoais
+- Exportação de movimentações em CSV
+- Backup e restauração dos dados em JSON
+- Alternância entre tema claro e escuro
+
+## Tecnologias utilizadas
+
+- **React** — desenvolvimento da interface
+- **JavaScript** — lógica e funcionalidades
+- **Vite** — ambiente de desenvolvimento
+- **CSS** — estilização e responsividade
+- **LocalStorage** — armazenamento local dos dados
+
+## Como executar
+
+Para rodar o projeto, é necessário ter o Node.js instalado.
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/PedroVasPassos/MeuCaixa.git
+```
+
+Entre na pasta do projeto:
+
+```bash
+cd MeuCaixa
+```
+
+Instale as dependências:
 
 ```bash
 npm install
+```
+
+Inicie o servidor:
+
+```bash
 npm run dev
 ```
 
-Abra o endereço exibido pelo Vite. Para testar os cálculos financeiros:
+Depois, abra o endereço informado no terminal.
+
+Para executar os testes:
 
 ```bash
 npm test
 ```
 
-## O que foi mudado
+## Investimentos
 
-- **Uma única navegação** no topo, sem menus duplicados.
-- **Um único botão de tema**, no canto superior direito (claro/escuro).
-- Tipografia de valores corrigida: números em fonte sem serifa, espaçamento natural, sem distorção.
-- Home editorial: saldo disponível como prioridade, entradas/saídas claras, últimos lançamentos e dinheiro guardado.
-- Campos e botões em linguagem simples: **Anotar gasto**, **Recebi dinheiro**, **Guardei mais**, **Retirei dinheiro**, **Conferir saldo**.
-- O antigo botão “Rendimento” foi substituído por **Conferir saldo**. Basta olhar quanto aparece no banco e informar esse total; o sistema lança a diferença (pode ser um rendimento, uma taxa ou outro ajuste).
-- Os 103% do CDI ficam cadastrados como **taxa contratada**, sem cálculo automático fictício.
-- Aportes e resgates são transferências: não alteram receitas/despesas, mas alteram dinheiro na conta e dinheiro guardado.
-- Versão mantém a chave local do projeto anterior (`meu-caixa-dual-v3`) para aproveitar dados, caso seja executada na mesma origem do navegador.
+O Meu Caixa também permite acompanhar valores guardados em investimentos, como CDBs.
 
-## Para usar com suas finanças reais
+É possível cadastrar o investimento, informar a taxa contratada, registrar novos depósitos e retiradas e atualizar o saldo conforme os valores apresentados pela instituição financeira.
 
-1. Clique em **Começar com meus dados**, para remover a demonstração.
-2. Em **Ajustes**, informe quanto tem disponível na conta **sem incluir o CDB**, e a data inicial de acompanhamento.
-3. Em **Dinheiro guardado**, cadastre o CDB PagBank. Digite quanto já estava lá na data escolhida — não vai sair da sua conta novamente.
-4. Quando gastar, use **Anotar gasto**. Quando receber salário, use **Recebi dinheiro**.
-5. Quando transferir da conta para o CDB, use **Guardei mais**; quando tirar, use **Retirei dinheiro**.
-6. Para conferir o valor que o CDB mostra no banco, use **Conferir saldo**.
-7. Em **Ajustes**, faça backup JSON regularmente.
+Atualmente, o acompanhamento dos rendimentos é manual. O sistema ainda não realiza consultas automáticas às instituições financeiras nem calcula a rentabilidade com base nas taxas de mercado.
 
-## Limitações importantes
+## Próximas etapas
 
-- Dados **somente no navegador** (localStorage). Sem Supabase/login ainda.
-- Não há conexão com PagBank, consulta automática de CDI ou cálculo automático de impostos. A taxa % CDI é uma descrição do investimento.
-- **Conferência de saldo não mede isoladamente os juros líquidos:** diferença entre valor mostrado e valor registrado pode resultar de movimentações não lançadas, impostos e tarifas. Registre aportes e retiradas primeiro.
-- Valor disponível é calculado a partir de saldo inicial + entradas − despesas − transferências ao CDB + retiradas, **até a data de hoje**.
-- As metas são ilustrativas: não transferem dinheiro automaticamente.
-- Use o extrato do banco como fonte de verdade; o app ajuda a organizar os registros, mas não substitui o extrato.
+- [ ] Integração com Supabase e PostgreSQL
+- [ ] Sistema de cadastro e login
+- [ ] Armazenamento e sincronização dos dados na nuvem
+- [ ] Melhorias na interface e na experiência do usuário
+- [ ] Aprimoramento do acompanhamento de investimentos
+- [ ] Publicação de uma versão estável
 
-## Estrutura
+## Observações
 
-- `src/App.jsx`: interface, navegação, formulários.
-- `src/App.css`: design dos dois temas, responsividade.
-- `src/lib/finance.js`: cálculos testáveis e formatação.
-- `src/lib/storage.js`: leitura, normalização, demonstração e migração de dados.
-- `tests/finance.test.mjs`: testes do fluxo de dinheiro.
-- `docs/`: documentação e prévias.
+O projeto ainda está em desenvolvimento e utiliza o armazenamento local do navegador. Por isso, os dados não são sincronizados entre dispositivos.
 
-## Prévia do design
+É possível exportar um backup para evitar a perda das informações.
 
-As imagens em `docs/preview-dark.png`, `docs/preview-light.png` e `docs/preview-mobile.png` são **composições estáticas feitas com o CSS do projeto e dados de exemplo**; não substituem a validação do React no seu navegador.
+O Meu Caixa é um projeto pessoal de aprendizado e organização financeira, não substituindo os extratos e informações oficiais das instituições financeiras.
